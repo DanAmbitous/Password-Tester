@@ -74,12 +74,18 @@ function visibilityToggler() {
 
   const elemnetData = element.dataset
 
+  const icon = document.querySelector('#visibility')
+
   if (elemnetData.state === "public") {
     element.setAttribute("type", "password")
     element.setAttribute('data-state', 'privet')
+    icon.classList.remove("fa-eye")
+    icon.classList.add("fa-eye-slash")
   } else {
     element.setAttribute("type", "text")
     element.setAttribute('data-state', 'public')
+    icon.classList.remove("fa-eye-slash")
+    icon.classList.add("fa-eye")
   }
 }
 
